@@ -215,23 +215,7 @@ void loop()
 
   Serial.print("\n");
   delay(500);
-//---------------------------THERMAL PRINTER CODE------------------
 
-  is_switch_press = digitalRead(SW); // Reading the Switch press status
-
-  if (is_switch_press == HIGH)
-  {
-    delay(debounce_delay); // debounce delay for button press
-    if(is_switch_press == HIGH)
-    {
-    digitalWrite(led, HIGH);
-    Serial.println("Hello");
-    }
-  }
-   else
-   {
-    digitalWrite(led, LOW);
-  }    
 
   snprintf(ble_data, sizeof(ble_data), ble_data_format, temperatureC, Humidity, light, co2_ppm, voc_ppm, batVolts, pir);
   //  Serial.println(ble_data);
